@@ -1,4 +1,10 @@
-const map = new window.geolonia.Map("#map");
+const map = new maplibregl.Map({
+  container: 'map', // container id
+  style: 'https://demotiles.maplibre.org/style.json', // style URL
+  center: [0, 0], // starting position [lng, lat]
+  zoom: 2, // starting zoom
+  maxZoom: 30,
+});
 
 const refresh = () => {
   const zoom = Math.floor(map.getZoom()) + 2;
